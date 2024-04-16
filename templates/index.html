@@ -1,0 +1,73 @@
+<!-- FILEPATH: /C:/Users/Sachin Upadhyay/Desktop/Projects/DigitRecognition/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit Recognition</title>
+</head>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.content {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    display: flex;  /* Corrected typo here */
+    background-color: white;
+    padding: 20px;
+}
+</style>
+<body>
+    <h1>Digit Recognition</h1>
+    <div class='content'>
+        <img src='../static/digit.png' alt='digit image'/>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*">
+            <button type="submit">Recognize Digit</button>
+        </form>
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
